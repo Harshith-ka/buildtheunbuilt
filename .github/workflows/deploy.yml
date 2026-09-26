@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_URL: /srminnovatex/
+          VITE_BASE_URL: /buildtheunbuilt/
 
       - name: Pre-render index.html
         run: node prerender.mjs
