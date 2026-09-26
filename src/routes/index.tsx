@@ -19,10 +19,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Route = createFileRoute("/")({
-  component: InoVateXLanding,
+  component: BuildTheUnbuiltLanding,
 });
 
-const TARGET_DATE = new Date("2026-10-09T09:00:00+05:30").getTime();
+const TARGET_DATE = new Date("2026-11-15T09:00:00+05:30").getTime();
 
 function useCountdown() {
   const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0 });
@@ -586,7 +586,7 @@ function FloatingTag({ left, label, sub, delay }: { left:string; label:string; s
       <div ref={tagRef} style={{ transformOrigin:"top center", width:116, background:"linear-gradient(145deg,rgba(8,18,40,0.97),rgba(4,9,26,0.99))", border:"1px solid rgba(43,126,245,0.3)", borderRadius:12, padding:"8px 10px 10px", boxShadow:"0 24px 48px rgba(0,0,0,0.6),0 0 24px rgba(43,126,245,0.12)" }}>
         {/* Hole */}
         <div style={{ width:18, height:18, borderRadius:"50%", background:"radial-gradient(circle at 40% 35%,#0a1520,#020810)", border:"2px solid rgba(43,126,245,0.4)", margin:"-14px auto 6px", boxShadow:"0 0 6px rgba(43,126,245,0.3),inset 0 2px 4px rgba(0,0,0,0.6)" }} />
-        <div style={{ fontSize:7, fontWeight:800, color:"rgba(56,189,248,0.8)", letterSpacing:"0.25em", textTransform:"uppercase", textAlign:"center" }}>SRM InoVateX</div>
+        <div style={{ fontSize:7, fontWeight:800, color:"rgba(56,189,248,0.8)", letterSpacing:"0.25em", textTransform:"uppercase", textAlign:"center" }}>Build The Unbuilt</div>
         <div style={{ height:1, background:"linear-gradient(90deg,transparent,rgba(43,126,245,0.35),transparent)", margin:"5px 0" }} />
         <div style={{ fontSize:13, fontWeight:900, color:"white", textAlign:"center", lineHeight:1.2, fontFamily:"var(--font-display)" }}>{label}</div>
         <div style={{ fontSize:7, color:"rgba(245,166,35,0.85)", textTransform:"uppercase", letterSpacing:"0.18em", textAlign:"center", marginTop:4 }}>{sub}</div>
@@ -614,7 +614,7 @@ function DataRain() {
     const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
     resize();
     window.addEventListener("resize", resize);
-    const chars = "0123456789ABCDEF₹01₹10∑∞λ∇αβ24SRMINOVATEX".split("");
+    const chars = "0123456789ABCDEF₹01₹10∑∞λ∇αβ24BUILDTHEUNBUILT".split("");
     const fontSize = 13;
     const cols = Math.floor(canvas.width / fontSize);
     const drops: number[] = Array(cols).fill(1);
@@ -698,7 +698,7 @@ function NavTag() {
       <div style={{ width:1.5, height:44, background:"linear-gradient(to bottom,rgba(245,166,35,0.9),rgba(43,126,245,0.5))" }} />
       <div ref={tagRef} style={{ transformOrigin:"top center", width:78, background:"linear-gradient(145deg,rgba(8,18,40,0.97),rgba(4,9,26,0.99))", border:"1px solid rgba(43,126,245,0.35)", borderRadius:8, padding:"6px 8px 8px", boxShadow:"0 16px 32px rgba(0,0,0,0.6),0 0 16px rgba(43,126,245,0.15)" }}>
         <div style={{ width:12, height:12, borderRadius:"50%", background:"rgba(4,9,26,0.9)", border:"2px solid rgba(43,126,245,0.45)", margin:"-9px auto 5px", boxShadow:"inset 0 1px 3px rgba(0,0,0,0.5)" }} />
-        <div style={{ fontSize:6, fontWeight:800, color:"rgba(56,189,248,0.7)", letterSpacing:"0.2em", textTransform:"uppercase", textAlign:"center" }}>InoVateX</div>
+        <div style={{ fontSize:6, fontWeight:800, color:"rgba(56,189,248,0.7)", letterSpacing:"0.2em", textTransform:"uppercase", textAlign:"center" }}>BUILD</div>
         <div style={{ height:1, background:"linear-gradient(90deg,transparent,rgba(43,126,245,0.3),transparent)", margin:"4px 0" }} />
         <div style={{ fontSize:11, fontWeight:900, color:"white", textAlign:"center", lineHeight:1.2 }}>HACK</div>
         <div style={{ fontSize:6, color:"rgba(245,166,35,0.85)", textTransform:"uppercase", letterSpacing:"0.15em", textAlign:"center", marginTop:2 }}>2026</div>
@@ -821,18 +821,18 @@ function IDCard() {
           {/* Metallic edge highlight */}
           <div style={{ position:"absolute", inset:0, zIndex:9, pointerEvents:"none", borderRadius:20, border:"1px solid rgba(255,255,255,0.08)", background:"linear-gradient(145deg,rgba(255,255,255,0.04) 0%,transparent 50%,rgba(0,0,0,0.1) 100%)" }} />
 
-          {/* Top color bar — SRM branding strip */}
+          {/* Top color bar — branding strip */}
           <div style={{ height:8, background:"linear-gradient(90deg,#0a3a8c,#2B7EF5,#38BDF8,#2B7EF5,#0a3a8c)" }} />
 
           {/* Organization header */}
           <div style={{ background:"linear-gradient(135deg,#081228,#0d1e3a)", padding:"14px 20px", display:"flex", alignItems:"center", justifyContent:"space-between", borderBottom:"1px solid rgba(43,126,245,0.15)" }}>
             <div>
-              <div style={{ fontSize:11, fontWeight:800, color:"rgba(56,189,248,0.9)", letterSpacing:"0.25em", textTransform:"uppercase" }}>SRM University</div>
-              <div style={{ fontSize:8, color:"rgba(180,200,240,0.5)", letterSpacing:"0.15em", marginTop:2 }}>Ramapuram · Chennai</div>
+              <div style={{ fontSize:11, fontWeight:800, color:"rgba(56,189,248,0.9)", letterSpacing:"0.25em", textTransform:"uppercase" }}>Paryan Technologies</div>
+              <div style={{ fontSize:8, color:"rgba(180,200,240,0.5)", letterSpacing:"0.15em", marginTop:2 }}>Pvt. Ltd. · Online</div>
             </div>
             <div style={{ textAlign:"right" }}>
-              <div style={{ fontSize:16, fontWeight:900, background:"linear-gradient(135deg,#2B7EF5,#F5A623)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", letterSpacing:"0.05em" }}>InoVateX</div>
-              <div style={{ fontSize:7, color:"rgba(245,166,35,0.7)", letterSpacing:"0.2em", textTransform:"uppercase" }}>2026</div>
+              <div style={{ fontSize:13, fontWeight:900, background:"linear-gradient(135deg,#2B7EF5,#F5A623)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", letterSpacing:"0.05em" }}>BUILD THE</div>
+              <div style={{ fontSize:7, color:"rgba(245,166,35,0.7)", letterSpacing:"0.2em", textTransform:"uppercase" }}>UNBUILT 2026</div>
             </div>
           </div>
 
@@ -876,9 +876,9 @@ function IDCard() {
 
                 <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
                   {[
-                    { l:"Event", v:"InoVateX 2026" },
-                    { l:"Date", v:"Oct 9–10" },
-                    { l:"Venue", v:"SRM Ramapuram" },
+                    { l:"Event", v:"Build The Unbuilt" },
+                    { l:"Date", v:"TBA · 2026" },
+                    { l:"Mode", v:"100% Online" },
                   ].map(({ l, v }) => (
                     <div key={l} style={{ display:"flex", gap:6, alignItems:"center" }}>
                       <span style={{ fontSize:8, color:"rgba(120,150,200,0.6)", letterSpacing:"0.1em", width:36, textTransform:"uppercase" }}>{l}</span>
@@ -919,11 +919,11 @@ function IDCard() {
             }}>
               <div>
                 <div style={{ fontSize:7, color:"rgba(245,166,35,0.6)", letterSpacing:"0.2em", textTransform:"uppercase" }}>Total Prize Pool</div>
-                <div style={{ fontSize:18, fontWeight:900, color:"#F5A623", fontFamily:"var(--font-display)", lineHeight:1 }}>₹1,00,000+</div>
+                <div style={{ fontSize:18, fontWeight:900, color:"#F5A623", fontFamily:"var(--font-display)", lineHeight:1 }}>₹50,000+</div>
               </div>
               <div style={{ textAlign:"right" }}>
                 <div style={{ fontSize:7, color:"rgba(120,150,200,0.5)", letterSpacing:"0.1em" }}>TRACKS</div>
-                <div style={{ fontSize:22, fontWeight:900, color:"rgba(56,189,248,0.8)", fontFamily:"var(--font-display)", lineHeight:1 }}>07</div>
+                <div style={{ fontSize:22, fontWeight:900, color:"rgba(56,189,248,0.8)", fontFamily:"var(--font-display)", lineHeight:1 }}>06</div>
               </div>
             </div>
 
@@ -938,19 +938,19 @@ function IDCard() {
                   }} />
                 ))}
               </div>
-              <div style={{ fontSize:7, color:"rgba(120,150,200,0.45)", letterSpacing:"0.25em", textTransform:"uppercase" }}>#INOVATEX-2026-HACK</div>
+              <div style={{ fontSize:7, color:"rgba(120,150,200,0.45)", letterSpacing:"0.25em", textTransform:"uppercase" }}>#BUILDTHEUNBUILT-2026</div>
             </div>
           </div>
 
           {/* Footer strip */}
           <div style={{ background:"linear-gradient(90deg,#0a1a38,#081228)", padding:"8px 20px", display:"flex", alignItems:"center", justifyContent:"space-between", borderTop:"1px solid rgba(43,126,245,0.1)" }}>
-            <div style={{ fontSize:7, color:"rgba(120,150,200,0.4)", letterSpacing:"0.1em" }}>24-HOUR HACKATHON</div>
+            <div style={{ fontSize:7, color:"rgba(120,150,200,0.4)", letterSpacing:"0.1em" }}>24-HOUR ONLINE</div>
             <div style={{ display:"flex", gap:4 }}>
-              {["F","T","AI","IoT","Med"].map(t => (
+              {["AI","Fin","Edu","Sus","Med","Opn"].map(t => (
                 <div key={t} style={{ fontSize:6, color:"rgba(56,189,248,0.5)", background:"rgba(43,126,245,0.1)", borderRadius:3, padding:"1px 4px", letterSpacing:"0.05em" }}>{t}</div>
               ))}
             </div>
-            <div style={{ fontSize:7, color:"rgba(120,150,200,0.4)", letterSpacing:"0.1em" }}>SRM · 2026</div>
+            <div style={{ fontSize:7, color:"rgba(120,150,200,0.4)", letterSpacing:"0.1em" }}>PARYAN · 2026</div>
           </div>
 
           {/* Bottom color bar */}
@@ -1007,10 +1007,10 @@ function Nav() {
         <nav className={`flex items-center justify-between rounded-2xl px-5 py-2.5 transition-all ${scrolled ? "glass-strong" : "glass"}`}>
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 shrink-0">
-            <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="SRM InoVateX logo" className="h-9 w-9 rounded-xl object-contain bg-white/90 p-0.5" />
+            <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Build The Unbuilt logo" className="h-9 w-9 rounded-xl object-contain bg-white/90 p-0.5" />
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-sm font-bold tracking-tight">SRM InoVateX</span>
-              <span className="text-[10px] text-muted-foreground -mt-0.5">SRM · 2026</span>
+              <span className="font-display text-sm font-bold tracking-tight">Build The Unbuilt</span>
+              <span className="text-[10px] text-muted-foreground -mt-0.5">Paryan Technologies · 2026</span>
             </div>
           </a>
 
@@ -1036,7 +1036,7 @@ function Nav() {
                 <span className="absolute inline-flex h-full w-full rounded-full animate-ping opacity-75" style={{ background:"#60a5fa" }} />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background:"#60a5fa" }} />
               </span>
-              Oct 9–10, 2026
+              100% Online · 2026
             </div>
             <a href="#register" data-magnetic className="hidden sm:inline-flex items-center gap-1.5 rounded-full btn-glow btn-glow-hover px-5 py-2 text-sm font-medium text-white">
               Register <ArrowRight className="h-3.5 w-3.5" />
@@ -1075,10 +1075,10 @@ function Hero() {
   const t = useCountdown();
 
   const stats = [
-    { v:"₹1L+", l:"Prize Pool" },
-    { v:"7", l:"Tracks" },
+    { v:"₹50K+", l:"Prize Pool" },
+    { v:"6", l:"Tracks" },
     { v:"24", l:"Hours" },
-    { v:"350+", l:"Teams" },
+    { v:"1–5", l:"Team Size" },
   ];
 
   return (
@@ -1115,20 +1115,20 @@ function Hero() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
               </span>
-              National Hackathon · October 9-10, 2026
+              24-Hour Online Hackathon · Paryan Technologies
             </div>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.02]">
-              <span className="text-gradient">SRM</span>{" "}
-              <span className="text-gradient-brand">InoVateX</span>
+              <span className="text-gradient">Build The</span>
               <br />
+              <span className="text-gradient-brand">Unbuilt</span>{" "}
               <span className="text-foreground">2026</span>
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-muted-foreground max-w-xl">
-              24-Hour National Hackathon.{" "}
-              <span className="text-foreground font-medium">Innovate. Build. Transform.</span>
+              24-Hour Online Innovation Hackathon.{" "}
+              <span className="text-foreground font-medium">Don't just have an idea. Build it.</span>
             </p>
             <p className="mt-3 text-sm text-muted-foreground max-w-xl">
-              Build tomorrow in 24 hours — join India's most ambitious student builders at SRM Ramapuram.
+              24 hours, one idea — build what doesn't exist. Organized by Paryan Technologies Pvt. Ltd.
             </p>
             <div className="mt-8 flex flex-wrap gap-3" style={{ animationDelay:"0.15s" }}>
               <a href="#register" data-magnetic className="inline-flex items-center gap-2 rounded-full btn-glow btn-glow-hover px-7 py-3.5 text-sm font-semibold text-white">
@@ -1158,7 +1158,7 @@ function Hero() {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider">Hackathon Begins</div>
-                <div className="font-display font-semibold">9 October 2026 · 09:00 AM IST</div>
+                <div className="font-display font-semibold">Date Announced Soon · 100% Online</div>
               </div>
             </div>
             <div className="flex gap-2 sm:gap-3">
@@ -1209,12 +1209,12 @@ function About() {
   const rightRef = useRef<HTMLDivElement>(null);
 
   const keyFacts = [
-    { icon: Calendar, label:"Event Date", value:"9–10 Oct 2026", accent:"#2B7EF5" },
+    { icon: Calendar, label:"Event Date", value:"TBA · 2026", accent:"#2B7EF5" },
     { icon: Clock, label:"Duration", value:"24 Hours", accent:"#38BDF8" },
-    { icon: Users, label:"Teams", value:"350+ Expected", accent:"#818CF8" },
-    { icon: Code2, label:"Team Size", value:"3–5 Members", accent:"#2B7EF5" },
-    { icon: MapPin, label:"Venue", value:"SRM Ramapuram", accent:"#F5A623" },
-    { icon: Trophy, label:"Prize Pool", value:"₹1,00,000+", accent:"#F5A623" },
+    { icon: Users, label:"Format", value:"100% Online", accent:"#818CF8" },
+    { icon: Code2, label:"Team Size", value:"1–5 Members", accent:"#2B7EF5" },
+    { icon: MapPin, label:"Platform", value:"Google Meet", accent:"#F5A623" },
+    { icon: Trophy, label:"Prize Pool", value:"₹50,000+", accent:"#F5A623" },
   ];
 
   const pillars = [
@@ -1246,7 +1246,7 @@ function About() {
   }, []);
 
   return (
-    <Section id="about" eyebrow="About the event" title="A 24-hour arena for the next generation of builders.">
+    <Section id="about" eyebrow="About the event" title="A 24-hour online arena for builders across India.">
       {/* Key facts — glowing stat tiles */}
       <div ref={gridRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
         {keyFacts.map(({ icon:Icon, label, value, accent }) => (
@@ -1287,39 +1287,37 @@ function About() {
               </div>
             </div>
             <div className="relative mt-6 flex flex-wrap gap-2">
-              {["FinTech","AgriTech","EduTech","Sustainability","Open Innovation","IoT & Hardware","MedTech"].map((t) => (
+              {["AI / ML","FinTech","EduTech","Sustainability","Healthcare","Open Innovation"].map((t) => (
                 <span key={t} className="glass rounded-full px-3 py-1 text-xs font-medium">{t}</span>
               ))}
             </div>
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
-            SRM InoVateX 2026 is a student-driven 24-hour hackathon designed to bring together developers, designers, innovators and aspiring entrepreneurs to build practical technology solutions for real-world challenges.
+            Build The Unbuilt 2026 is a 24-hour online innovation hackathon organized by Paryan Technologies Pvt. Ltd., bringing together students, developers, designers, innovators, and problem-solvers to turn ideas into working solutions.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             <div className="glass rounded-2xl p-5 border-l-2 border-primary">
               <div className="text-xs uppercase tracking-wider text-cyan mb-1.5 font-semibold">Mission</div>
-              <div className="text-sm">Empower students to solve real-world problems through code and creativity.</div>
+              <div className="text-sm">Turn ideas into working solutions — build, experiment, collaborate, and compete with participants across India.</div>
             </div>
             <div className="glass rounded-2xl p-5 border-l-2 border-accent">
               <div className="text-xs uppercase tracking-wider text-primary mb-1.5 font-semibold">Vision</div>
-              <div className="text-sm">Build India's most vibrant student innovation ecosystem.</div>
+              <div className="text-sm">Build what doesn't exist. You have 24 hours, the technology, and the opportunity.</div>
             </div>
           </div>
           {/* Multi-Stage Evaluation — left column on desktop */}
           <div className="mt-5 glass-strong rounded-2xl p-5">
             <div className="flex items-center gap-2 mb-4">
               <div className="grid h-7 w-7 place-items-center rounded-lg bg-accent/15"><Zap className="h-4 w-4 text-accent" /></div>
-              <div className="text-sm font-bold">Multi-Stage Evaluation</div>
+              <div className="text-sm font-bold">2-Round Structure</div>
             </div>
             <div className="relative pl-3">
               <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-accent/40 to-transparent rounded-full" />
               {[
-                { time:"First 20 min", title:"Problem Pitch", desc:"Define your problem and present your approach.", color:"#2B7EF5" },
-                { time:"After 7 hours", title:"Progress Check", desc:"Technical review of implementation and innovation.", color:"#F5A623" },
-                { time:"After 15 hours", title:"Prototype Review", desc:"Working demo, UX and real-world impact assessed.", color:"#38BDF8" },
-                { time:"Final Round", title:"Industry Judging", desc:"Shortlisted teams pitch to founders and experts.", color:"#34d399" },
+                { time:"Round 1", title:"24-Hour Online Hackathon", desc:"Build your solution — GitHub repo, PPT, demo video, and project docs required at submission.", color:"#2B7EF5" },
+                { time:"Round 2", title:"Top 10 Final Evaluation", desc:"Shortlisted teams present live on Google Meet — pitch, demo, Q&A with industry judges.", color:"#34d399" },
               ].map(({ time, title, desc, color }, i) => (
-                <div key={title} className={`relative flex items-start gap-3 ${i < 3 ? "mb-4" : ""}`}>
+                <div key={title} className={`relative flex items-start gap-3 ${i < 1 ? "mb-4" : ""}`}>
                   <div className="absolute -left-[13px] top-1 h-3 w-3 rounded-full border-2 border-background"
                     style={{ background:color, boxShadow:`0 0 6px ${color}80` }} />
                   <div className="pl-3">
@@ -1369,12 +1367,12 @@ function About() {
 function WhyParticipate() {
   const gridRef = useRef<HTMLDivElement>(null);
   const items = [
-    { icon:Trophy, title:"Win Cash Prizes", desc:"Compete for ₹1,00,000+ in prizes — ₹60K cash + ₹40K worth of brand credits.", color:"from-yellow-500/20 to-orange-500/10", accent:"#F5A623", num:"01" },
-    { icon:Code2, title:"Build Real Projects", desc:"Ship functional products in 24 hours, not just decks.", color:"from-primary/20 to-cyan/10", accent:"#38BDF8", num:"02" },
-    { icon:Network, title:"Network", desc:"Connect with peers, mentors, and industry leaders.", color:"from-purple/20 to-primary/10", accent:"#818CF8", num:"03" },
-    { icon:FileBadge, title:"Certificates", desc:"Every participant receives a verified certificate.", color:"from-cyan/20 to-primary/10", accent:"#38BDF8", num:"04" },
-    { icon:Briefcase, title:"Internship Opportunities", desc:"Get noticed by our partner startups and companies.", color:"from-emerald-500/20 to-primary/10", accent:"#34d399", num:"05" },
-    { icon:Rocket, title:"Showcase Skills", desc:"Demo your work in front of a live audience of judges.", color:"from-primary/20 to-purple/10", accent:"#2B7EF5", num:"06" },
+    { icon:Trophy, title:"₹50,000 Cash Prize Pool", desc:"Top-performing teams compete for cash prizes plus special builder rewards and perks.", color:"from-yellow-500/20 to-orange-500/10", accent:"#F5A623", num:"01" },
+    { icon:Code2, title:"Build Real Projects", desc:"Ship functional products in 24 hours, not just decks or slide presentations.", color:"from-primary/20 to-cyan/10", accent:"#38BDF8", num:"02" },
+    { icon:Network, title:"Network Across India", desc:"Connect with peers, mentors, and innovators from colleges across the country.", color:"from-purple/20 to-primary/10", accent:"#818CF8", num:"03" },
+    { icon:FileBadge, title:"Certificates", desc:"Participants and finalists receive verified participation and achievement certificates.", color:"from-cyan/20 to-primary/10", accent:"#38BDF8", num:"04" },
+    { icon:Briefcase, title:"Internship Opportunities", desc:"Top performers may receive internship offers from Paryan Technologies based on project quality.", color:"from-emerald-500/20 to-primary/10", accent:"#34d399", num:"05" },
+    { icon:Rocket, title:"100% Online", desc:"Participate from anywhere in India — no travel needed, zero location barriers.", color:"from-primary/20 to-purple/10", accent:"#2B7EF5", num:"06" },
   ];
   useEffect(() => {
     if (!gridRef.current) return;
@@ -1385,7 +1383,7 @@ function WhyParticipate() {
     );
   }, []);
   return (
-    <Section id="why" eyebrow="Why participate" title="Six reasons you'll want to be here.">
+    <Section id="why" eyebrow="Why participate" title="Six reasons to build with us.">
       <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map(({ icon:Icon, title, desc, color, accent, num }) => (
           <div key={title} className={`group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2`}>
@@ -1420,7 +1418,7 @@ function Prizes() {
   const podiumRef = useRef<HTMLDivElement>(null);
   const amountRef = useRef<HTMLDivElement>(null);
   const prizes = [
-    { icon:Trophy, place:"1st Prize", amount:"₹35,000", color:"from-yellow-400 to-orange-500", ringColor:"ring-yellow-400/30", desc:"Winner of the hackathon", tilt:"-2deg" },
+    { icon:Trophy, place:"1st Prize", amount:"₹25,000", color:"from-yellow-400 to-orange-500", ringColor:"ring-yellow-400/30", desc:"Winner of the hackathon", tilt:"-2deg" },
     { icon:Award, place:"2nd Prize", amount:"₹15,000", color:"from-slate-300 to-slate-500", ringColor:"ring-slate-300/30", desc:"Runner-up team", tilt:"1.5deg" },
     { icon:Medal, place:"3rd Prize", amount:"₹10,000", color:"from-orange-400 to-amber-700", ringColor:"ring-orange-400/30", desc:"Second runner-up", tilt:"-1deg" },
   ];
@@ -1454,28 +1452,28 @@ function Prizes() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-cyan mb-4">Prize Pool</div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold">Take home your share of</h2>
-          <div ref={amountRef} className="mt-6 font-display text-7xl sm:text-9xl font-bold text-gradient-brand leading-none">₹1,00,000+</div>
+          <div ref={amountRef} className="mt-6 font-display text-7xl sm:text-9xl font-bold text-gradient-brand leading-none">₹50,000+</div>
           {/* Breakdown */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <div className="glass rounded-2xl px-5 py-3 text-center">
-              <div className="font-display text-2xl font-bold" style={{ color:"#F5A623" }}>₹60,000</div>
-              <div className="text-xs text-muted-foreground mt-0.5 uppercase tracking-wider">Cash Prizes</div>
+              <div className="font-display text-2xl font-bold" style={{ color:"#F5A623" }}>₹50,000</div>
+              <div className="text-xs text-muted-foreground mt-0.5 uppercase tracking-wider">Cash Prize Pool</div>
             </div>
             <div className="text-2xl text-muted-foreground font-light">+</div>
             <div className="glass rounded-2xl px-5 py-3 text-center" style={{ borderColor:"rgba(56,189,248,0.3)" }}>
-              <div className="font-display text-2xl font-bold text-cyan">₹40,000+</div>
-              <div className="text-xs text-muted-foreground mt-0.5 uppercase tracking-wider">In Extras & Awards</div>
+              <div className="font-display text-2xl font-bold text-cyan">Extras</div>
+              <div className="text-xs text-muted-foreground mt-0.5 uppercase tracking-wider">Builder Rewards & Perks</div>
             </div>
           </div>
-          {/* ₹40K extras — compact floating chips */}
+          {/* Extra perks — compact floating chips */}
           <div className="mt-5 flex flex-wrap justify-center gap-2 max-w-xl mx-auto">
             {[
-              { icon:"🏆", label:"Performance Prizes", color:"#F5A623" },
-              { icon:"🎨", label:"Best UI/UX", color:"#818CF8" },
-              { icon:"💡", label:"Best Idea Award", color:"#38BDF8" },
-              { icon:"🧢", label:"Goodies & Merch", color:"#34d399" },
-              { icon:"📦", label:"Brand Credits", color:"#2B7EF5" },
-              { icon:"🎁", label:"Special Offers", color:"#F5A623" },
+              { icon:"🏆", label:"Top 10 Final Round", color:"#F5A623" },
+              { icon:"💼", label:"Internship Offers", color:"#818CF8" },
+              { icon:"🎯", label:"Special Builder Rewards", color:"#38BDF8" },
+              { icon:"📜", label:"Certificates", color:"#34d399" },
+              { icon:"🎁", label:"Exclusive Perks", color:"#2B7EF5" },
+              { icon:"🚀", label:"Project Showcase", color:"#F5A623" },
             ].map(({ icon, label, color }) => (
               <div key={label} style={{
                 display:"inline-flex", alignItems:"center", gap:6,
@@ -1506,6 +1504,7 @@ function Prizes() {
                       </div>
                       <div className="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-1">2nd Place</div>
                       <div className="font-display text-2xl font-bold" style={{ color:"#94a3b8" }}>₹15,000</div>
+
                       <div className="text-[9px] text-muted-foreground mt-0.5">cash + credits</div>
                       <div className="mt-3 pt-3 border-t border-white/5 text-[10px] text-muted-foreground">{p.desc}</div>
                     </div>
@@ -1532,7 +1531,7 @@ function Prizes() {
                         <p.icon className="h-8 w-8 text-white" />
                       </div>
                       <div className="text-[10px] uppercase tracking-widest font-bold mb-1" style={{ color:"#F5A623" }}>1st Place</div>
-                      <div className="font-display text-3xl font-bold" style={{ color:"#F5A623" }}>₹35,000</div>
+                      <div className="font-display text-3xl font-bold" style={{ color:"#F5A623" }}>₹25,000</div>
                       <div className="text-[9px] text-muted-foreground mt-0.5">cash + credits</div>
                       <div className="mt-3 pt-3 border-t border-white/5 text-[10px] text-muted-foreground">Winner of the hackathon</div>
                       <div className="mt-3 flex items-center justify-center gap-1.5 text-[9px]" style={{ color:"rgba(245,166,35,0.6)" }}>
@@ -1599,13 +1598,12 @@ function Prizes() {
 function Tracks() {
   const gridRef = useRef<HTMLDivElement>(null);
   const tracks = [
-    { icon:Rocket, name:"Open Innovation", desc:"Build innovative tech solutions for meaningful real-world problems across any domain.", tag:"01", color:"from-violet-500/20 to-purple/20", accent:"#a78bfa" },
-    { icon:Coins, name:"FinTech", desc:"Digital payments, banking, financial inclusion, and financial security.", tag:"02", color:"from-emerald-500/20 to-primary/20", accent:"#34d399" },
-    { icon:Wheat, name:"AgriTech", desc:"Smart farming, farmer-focused solutions, food systems and rural innovation.", tag:"03", color:"from-lime-500/20 to-accent/20", accent:"#84cc16" },
-    { icon:GraduationCap, name:"EduTech", desc:"Personalized learning, accessibility, skill development and innovative learning solutions.", tag:"04", color:"from-cyan/20 to-primary/20", accent:"#38BDF8" },
-    { icon:Leaf, name:"Sustainability", desc:"Climate tech, waste management, renewable energy and sustainable solutions.", tag:"05", color:"from-green-500/20 to-primary/20", accent:"#4ade80" },
-    { icon:Wifi, name:"IoT & Hardware", desc:"Embedded systems, smart devices, robotics, sensors, and real-world hardware prototypes.", tag:"06", color:"from-orange-500/20 to-accent/20", accent:"#fb923c", badge:"Hardware" },
-    { icon:Activity, name:"MedTech", desc:"Health monitoring, diagnostics, patient care, medical devices, and digital health innovations.", tag:"07", color:"from-rose-500/20 to-primary/20", accent:"#fb7185", badge:"New" },
+    { icon:Cpu, name:"AI / ML", desc:"Intelligent solutions using Artificial Intelligence, Machine Learning, Generative AI, Computer Vision, NLP, and AI Agents.", tag:"01", color:"from-violet-500/20 to-purple/20", accent:"#a78bfa", badge:"Hot" },
+    { icon:Leaf, name:"Sustainability & Climate Tech", desc:"Technology-driven solutions for climate change, environmental challenges, waste management, energy, and agriculture.", tag:"02", color:"from-green-500/20 to-primary/20", accent:"#4ade80" },
+    { icon:Activity, name:"Healthcare & MedTech", desc:"Innovative solutions for healthcare accessibility, patient care, medical technology, health monitoring, and diagnostics.", tag:"03", color:"from-rose-500/20 to-primary/20", accent:"#fb7185" },
+    { icon:GraduationCap, name:"EdTech", desc:"Solutions improving education, learning experiences, accessibility, skill development, assessment, and knowledge sharing.", tag:"04", color:"from-cyan/20 to-primary/20", accent:"#38BDF8" },
+    { icon:Coins, name:"FinTech", desc:"Innovative solutions for payments, financial inclusion, personal finance, digital banking, and financial security.", tag:"05", color:"from-emerald-500/20 to-primary/20", accent:"#34d399" },
+    { icon:Rocket, name:"Open Innovation", desc:"Have an idea that doesn't fit the above? Build it — solve any meaningful real-world problem using technology.", tag:"06", color:"from-orange-500/20 to-accent/20", accent:"#fb923c" },
   ];
   useEffect(() => {
     if (!gridRef.current) return;
@@ -1616,18 +1614,18 @@ function Tracks() {
     );
   }, []);
   return (
-    <Section id="tracks" eyebrow="Innovation tracks" title="Pick a lane. Ship something incredible." subtitle="Seven focused tracks — each with dedicated mentors and industry problem statements.">
+    <Section id="tracks" eyebrow="Innovation tracks" title="Pick a lane. Build something real." subtitle="Six focused tracks — open to all students, developers, designers, and innovators.">
       <div className="mb-8 glass-strong rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 border-l-2 border-primary">
         <div className="flex items-center gap-3 shrink-0">
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20"><Cpu className="h-5 w-5 text-primary" /></div>
-          <div className="font-display font-semibold text-sm">Hardware Prototypes Welcome</div>
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20"><Rocket className="h-5 w-5 text-primary" /></div>
+          <div className="font-display font-semibold text-sm">No Expert Level Required</div>
         </div>
         <div className="hidden sm:block h-8 w-px bg-primary/15" />
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Teams may build <span className="text-foreground font-medium">hardware prototypes</span> across any track — IoT devices, embedded systems, sensors, robotics, and more. All components must be <span className="text-foreground font-medium">brought by the team</span>.
+          You don't need to be an expert. What matters is your <span className="text-foreground font-medium">idea, execution, creativity</span>, and ability to build a working solution in 24 hours.
         </p>
       </div>
-      <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {tracks.map(({ icon:Icon, name, desc, tag, color, accent, badge }) => (
           <div key={name}
             className="group relative rounded-3xl p-[1px] overflow-hidden transition-all duration-500 hover:-translate-y-2"
@@ -1728,11 +1726,12 @@ function TimelineRow({ s, i, right }: { s:{ date:string; time:string; title:stri
 function Timeline() {
   const lineRef = useRef<HTMLDivElement>(null);
   const steps = [
-    { date:"Aug 01", time:"00:00 IST", title:"Registration Opens", desc:"Applications go live to teams across India.", icon:Sparkles },
-    { date:"Sep 25", time:"23:59 IST", title:"Registration Closes", desc:"Final teams confirmed and shortlisted.", icon:FileBadge },
-    { date:"Oct 09", time:"09:00 IST", title:"Hackathon Starts", desc:"The 24-hour clock officially begins.", icon:Rocket },
-    { date:"Oct 10", time:"09:00 IST", title:"Project Evaluation", desc:"Live demos to a panel of industry judges.", icon:Code2 },
-    { date:"Oct 10", time:"18:00 IST", title:"Prize Distribution", desc:"Winners announced. Champions crowned.", icon:Trophy },
+    { date:"Step 1", time:"Registration", title:"Register on Unstop", desc:"Register your team/individual participation through the Unstop platform.", icon:Sparkles },
+    { date:"Step 2", time:"Form & Payment", title:"Fill Form + Pay ₹100/person", desc:"Complete the registration form and pay ₹100 per participant. Submit payment proof.", icon:FileBadge },
+    { date:"Step 3", time:"Confirmation", title:"Receive Confirmation Email", desc:"After payment verification, you'll receive a confirmation email with all details.", icon:CheckCircle2 },
+    { date:"Step 4", time:"Community", title:"Join WhatsApp Community", desc:"WhatsApp group link shared post-confirmation. All updates via official channels.", icon:Users },
+    { date:"Step 5", time:"24 Hours", title:"Hackathon Day — Build", desc:"The 24-hour clock begins. Identify → Ideate → Build → Submit.", icon:Rocket },
+    { date:"Step 6", time:"Top 10", title:"Final Evaluation via Google Meet", desc:"Top 10 teams present live. Winners selected by industry judges.", icon:Trophy },
   ];
   useEffect(() => {
     if (!lineRef.current) return;
@@ -1742,7 +1741,7 @@ function Timeline() {
     );
   }, []);
   return (
-    <Section id="timeline" eyebrow="Timeline" title="Mark your calendar.">
+    <Section id="timeline" eyebrow="How it works" title="From registration to winner." subtitle="Six simple steps to go from signing up to competing for ₹50,000.">
       <div className="relative">
         <div ref={lineRef} className="absolute left-6 sm:left-8 md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 overflow-hidden rounded-full">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-accent/40 to-primary/10" />
@@ -1758,26 +1757,41 @@ function Timeline() {
 
 // ─── VENUE ───────────────────────────────────────────────────────────────────
 function Venue() {
+  const features = [
+    { icon: Wifi, title: "100% Online", desc: "Participate from anywhere in India — no travel, no campus visit required." },
+    { icon: Users, title: "Open to All Students", desc: "Any student from any college across India can register and compete." },
+    { icon: Clock, title: "24 Hours Non-Stop", desc: "Build your solution in one continuous 24-hour sprint." },
+    { icon: Code2, title: "Google Meet Finals", desc: "Top 10 teams present live on Google Meet to industry judges." },
+  ];
   return (
-    <Section id="venue" eyebrow="Venue" title="Where it all goes down.">
+    <Section id="venue" eyebrow="Platform" title="100% Online." subtitle="No travel. No campus. Just your laptop, your team, and 24 hours to build something real.">
       <div className="grid lg:grid-cols-2 gap-6">
         <div className="glass-strong rounded-3xl p-8">
-          <div className="flex items-center gap-2 text-cyan text-sm"><MapPin className="h-4 w-4" /> On-campus · Offline event</div>
-          <h3 className="mt-4 font-display text-3xl font-bold">SRM University</h3>
-          <p className="mt-1 text-muted-foreground">Ramapuram Campus, Chennai — Tamil Nadu, India</p>
+          <div className="flex items-center gap-2 text-cyan text-sm"><Wifi className="h-4 w-4" /> Online · No physical venue</div>
+          <h3 className="mt-4 font-display text-3xl font-bold">Build From Anywhere</h3>
+          <p className="mt-1 text-muted-foreground">India-wide · 100% Remote</p>
           <div className="mt-6 space-y-3 text-sm">
-            <div className="flex items-start gap-3"><MapPin className="h-4 w-4 text-primary mt-0.5" /> Bharathi Salai, Ramapuram, Chennai — 600089</div>
-            <div className="flex items-start gap-3"><Clock className="h-4 w-4 text-primary mt-0.5" /> 9 Oct 09:00 AM → 10 Oct 09:00 AM IST</div>
-            <div className="flex items-start gap-3"><Users className="h-4 w-4 text-primary mt-0.5" /> Open to students across India</div>
+            <div className="flex items-start gap-3"><Wifi className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Hackathon conducted fully online — no venue required</div>
+            <div className="flex items-start gap-3"><Clock className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Date TBA — 24-hour window announced ahead of time</div>
+            <div className="flex items-start gap-3"><Users className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Open to all students and developers across India</div>
+            <div className="flex items-start gap-3"><Code2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Finals: Top 10 teams present via Google Meet</div>
           </div>
-          <a href="https://maps.google.com/?q=SRM+University+Ramapuram" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm hover:bg-white/10 transition">
-            Open in Maps <ArrowRight className="h-3.5 w-3.5" />
+          <a href="https://unstop.com" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm hover:bg-white/10 transition">
+            Register on Unstop <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
-        <div className="glass rounded-3xl overflow-hidden min-h-[380px] relative">
-          <iframe title="SRM University Ramapuram"
-            src="https://www.google.com/maps?q=SRM+University+Ramapuram+Chennai&output=embed"
-            className="absolute inset-0 h-full w-full grayscale contrast-125" loading="lazy" />
+        <div className="grid grid-cols-2 gap-4">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="glass rounded-2xl p-5 flex flex-col gap-3">
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <div className="font-semibold text-sm">{title}</div>
+                <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{desc}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </Section>
@@ -1786,12 +1800,12 @@ function Venue() {
 
 // ─── INDUSTRY PARTNERS — tap to reveal ───────────────────────────────────────
 function InternshipOpportunities() {
-  const INSTAGRAM_URL = "https://instagram.com/srm.innovatex";
+  const INSTAGRAM_URL = "https://instagram.com/paryan.technologies";
   const cardsRef = useRef<HTMLDivElement>(null);
   const opportunities = [
-    { icon:Briefcase, label:"Software Internships" },{ icon:Laptop, label:"IoT Programs" },
-    { icon:TrendingUp, label:"Industry Exposure" },{ icon:Gift, label:"Vouchers & Goodies" },
-    { icon:Network, label:"Career Networking" },{ icon:Star, label:"Project Showcasing" },
+    { icon:Briefcase, label:"Software Internships" },{ icon:TrendingUp, label:"Industry Exposure" },
+    { icon:Gift, label:"Cash Prizes" },{ icon:Network, label:"Career Networking" },
+    { icon:Star, label:"Project Showcasing" },{ icon:FileBadge, label:"Certificates" },
   ];
   useEffect(() => {
     if (!cardsRef.current) return;
@@ -1811,7 +1825,7 @@ function InternshipOpportunities() {
         <div className="max-w-2xl mb-14">
           <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-cyan mb-4">Industry support</div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold leading-[1.05]">Beyond the hackathon — real opportunities.</h2>
-          <p className="mt-4 text-muted-foreground text-lg">Our industry partners provide internships, mentorship, and career pathways. Partner reveal coming soon.</p>
+          <p className="mt-4 text-muted-foreground text-lg">Top performers may receive internship offers from Paryan Technologies. Build something great and get noticed.</p>
         </div>
         {/* Mystery partner cards — tap to reveal on Instagram */}
         <div ref={cardsRef} className="grid lg:grid-cols-2 gap-6 mb-12">
@@ -1836,7 +1850,7 @@ function InternshipOpportunities() {
                 </div>
                 <div className="flex items-center gap-2 text-sm" style={{ color: accent }}>
                   <Instagram className="h-4 w-4" />
-                  <span className="text-xs font-medium">Follow @srm.innovatex for the official reveal</span>
+                  <span className="text-xs font-medium">Follow @paryan.technologies for the official reveal</span>
                 </div>
                 <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-muted-foreground flex items-center gap-1">
                   <ArrowRight className="h-3 w-3" /> Opens Instagram
@@ -1871,11 +1885,11 @@ function FAQVisual() {
   const [visibleCount, setVisibleCount] = useState(1);
   const chat = [
     { who:"q", text:"Who can participate?", delay:0 },
-    { who:"a", text:"Any student in India with a valid college ID. Undergrad or postgrad.", delay:800 },
-    { who:"q", text:"Can we build hardware?", delay:1800 },
-    { who:"a", text:"Yes! IoT, embedded systems, robotics — bring your components.", delay:2600 },
-    { who:"q", text:"AI tools allowed?", delay:3600 },
-    { who:"a", text:"Absolutely. Copilot, Cursor, and others are welcome.", delay:4400 },
+    { who:"a", text:"Any student or developer in India. Teams of 1–5 members.", delay:800 },
+    { who:"q", text:"What is the registration fee?", delay:1800 },
+    { who:"a", text:"₹100 per person. Pay via Unstop after filling the registration form.", delay:2600 },
+    { who:"q", text:"Is it online or offline?", delay:3600 },
+    { who:"a", text:"100% online. Hackathon + finals all conducted virtually.", delay:4400 },
   ];
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -1892,7 +1906,7 @@ function FAQVisual() {
         {/* Header bar */}
         <div className="px-5 py-3 flex items-center gap-2 border-b border-white/5">
           <div className="h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-xs font-mono text-muted-foreground">ask-innovatex</span>
+          <span className="text-xs font-mono text-muted-foreground">ask-buildtheunbuilt</span>
           <span className="ml-auto text-[10px] text-cyan/60 font-medium uppercase tracking-wider">Live</span>
         </div>
         <div className="p-4 space-y-3" style={{ minHeight:280 }}>
@@ -1931,10 +1945,10 @@ function FAQVisual() {
       <div className="text-center glass rounded-2xl p-5">
         <div className="font-display text-base font-bold mb-1">Still have questions?</div>
         <div className="text-xs text-muted-foreground mb-3">DM us on Instagram — we reply fast.</div>
-        <a href="https://instagram.com/srm.innovatex" target="_blank" rel="noreferrer"
+        <a href="https://instagram.com/paryan.technologies" target="_blank" rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm hover:bg-white/10 transition" style={{ border:"1px solid rgba(236,72,153,0.3)" }}>
           <Instagram className="h-4 w-4" style={{ color:"#ec4899" }} />
-          <span>@srm.innovatex</span>
+          <span>@paryan.technologies</span>
         </a>
       </div>
       <style>{`
@@ -1955,13 +1969,14 @@ function FAQVisual() {
 function FAQ() {
   const listRef = useRef<HTMLDivElement>(null);
   const faqs = [
-    { q:"Who can participate?", a:"Any undergraduate or postgraduate student in India with a valid college ID card." },
-    { q:"What is the team size?", a:"Teams of 3 to 5 members. Fees vary by team size: ₹1,399 for 3 members, ₹1,799 for 4, ₹2,099 for 5." },
-    { q:"Can beginners participate?", a:"Absolutely. We have mentors on-ground and beginner-friendly problem statements across all tracks." },
-    { q:"Can we use AI tools?", a:"Yes, AI tools like GitHub Copilot and Cursor are welcome — build with the modern stack." },
-    { q:"Can we build hardware prototypes?", a:"Yes! Teams can build hardware prototypes across any track — IoT devices, embedded systems, sensors, robotics, and similar. Power outlets and workspace will be provided. All hardware components must be brought by the team." },
-    { q:"What should we bring?", a:"Laptop & charger, extension board, power bank, ID card, and personal essentials. Refreshments and one dinner are provided for all participants." },
-    { q:"Is accommodation provided?", a:"Accommodation arrangements will be communicated to registered teams. Please reach out to the organizers for details." },
+    { q:"Who can participate?", a:"Any student, developer, or innovator from anywhere in India. Individual or teams of up to 5. No college affiliation required." },
+    { q:"What is the team size?", a:"1 to 5 members per team. You can also participate solo." },
+    { q:"What is the registration fee?", a:"₹100 per person. Register on Unstop, fill the form, pay ₹100/person, and submit your payment proof for verification." },
+    { q:"How does registration work?", a:"Register on Unstop → Fill the registration form → Pay ₹100/person → Submit payment proof → Receive confirmation email → Get WhatsApp group link." },
+    { q:"Can beginners participate?", a:"Absolutely. You don't need to be an expert — what matters is your idea, effort, and ability to build in 24 hours." },
+    { q:"Can we use AI tools?", a:"Yes, AI tools like GitHub Copilot, Cursor, and others are welcome — build with the modern stack." },
+    { q:"What needs to be submitted?", a:"A working GitHub repo, a presentation (PPT), a demo video, and project documentation. All submitted within the 24-hour window." },
+    { q:"How are finalists evaluated?", a:"Top 10 teams are shortlisted based on Round 1 submissions and present live on Google Meet to industry judges — pitch, demo, and Q&A." },
   ];
   useEffect(() => {
     if (!listRef.current) return;
@@ -2008,7 +2023,7 @@ function FAQ() {
 
 // ─── SPONSORS ────────────────────────────────────────────────────────────────
 function Sponsors() {
-  const INSTAGRAM_URL = "https://instagram.com/srm.innovatex";
+  const INSTAGRAM_URL = "https://instagram.com/paryan.technologies";
   const cards = [1,2,3,4,5,6];
   return (
     <Section id="sponsors" eyebrow="Sponsors & partners" title="Our sponsors are coming.">
@@ -2083,7 +2098,7 @@ function Team() {
     );
   }, []);
   return (
-    <Section id="team" eyebrow="Organizing team" title="Meet the crew behind InoVateX.">
+    <Section id="team" eyebrow="Organizing team" title="Meet the team behind Build The Unbuilt.">
       <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {team.map((m) => (
           <div key={m.name} className="group relative">
@@ -2130,7 +2145,7 @@ function Team() {
                 </div>
                 {/* Divider + social */}
                 <div className="pt-3 flex items-center justify-between" style={{ borderTop:`1px solid ${m.accent}18` }}>
-                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">SRM InoVateX 2026</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Build The Unbuilt 2026</div>
                   <div className="flex items-center gap-2">
                     <a href="#" aria-label={`${m.name} LinkedIn`}
                       className="grid h-7 w-7 place-items-center rounded-full transition-colors duration-200"
@@ -2175,21 +2190,21 @@ function ContactCTA() {
               <h2 ref={headingRef} className="font-display text-4xl sm:text-5xl font-bold leading-tight">
                 Ready to <span className="text-gradient-brand">build tomorrow</span>?
               </h2>
-              <p className="mt-4 text-muted-foreground text-lg">Grab your spot before registrations close on September 25th.</p>
+              <p className="mt-4 text-muted-foreground text-lg">Register on Unstop, pay ₹100/person, and start building.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#" data-magnetic className="inline-flex items-center gap-2 rounded-full btn-glow btn-glow-hover px-7 py-3.5 text-sm font-semibold text-white">
-                  Register Your Team <ArrowRight className="h-4 w-4" />
+                <a href="https://unstop.com" target="_blank" rel="noreferrer" data-magnetic className="inline-flex items-center gap-2 rounded-full btn-glow btn-glow-hover px-7 py-3.5 text-sm font-semibold text-white">
+                  Register on Unstop <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="#tracks" className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-semibold hover:bg-white/10">View Tracks</a>
               </div>
             </div>
             <div className="space-y-3">
               {[
-                { icon:Mail, label:"innovatex@srmist.edu.in" },
-                { icon:Phone, label:"+91 98765 43210" },
-                { icon:MapPin, label:"SRM Ramapuram, Chennai" },
-                { icon:Instagram, label:"@srm.innovatex" },
-                { icon:Linkedin, label:"SRM InnovateX" },
+                { icon:Mail, label:"contact@paryantech.com" },
+                { icon:Phone, label:"+91 00000 00000" },
+                { icon:MapPin, label:"India · 100% Online" },
+                { icon:Instagram, label:"@paryan.technologies" },
+                { icon:Linkedin, label:"Paryan Technologies" },
               ].map(({ icon:Icon, label }) => (
                 <div key={label} className="flex items-center gap-3 glass rounded-xl px-4 py-3">
                   <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary/30 to-purple/30">
@@ -2210,7 +2225,7 @@ function ContactCTA() {
 function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const socials = [
-    { Icon: Instagram, label: "Instagram", href: "https://instagram.com/srm.innovatex", hoverBg: "#E1306C" },
+    { Icon: Instagram, label: "Instagram", href: "https://instagram.com/paryan.technologies", hoverBg: "#E1306C" },
     { Icon: Linkedin,  label: "LinkedIn",  href: "#", hoverBg: "#0A66C2" },
     { Icon: Twitter,   label: "Twitter",   href: "#", hoverBg: "#1DA1F2" },
     { Icon: Github,    label: "GitHub",    href: "#", hoverBg: "#f0f6fc" },
@@ -2228,8 +2243,8 @@ function Footer() {
               <Calendar className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <div className="text-sm font-semibold">Registrations close September 25th</div>
-              <div className="text-xs text-muted-foreground">Limited team slots — secure your spot early</div>
+              <div className="text-sm font-semibold">₹100/person · Register on Unstop</div>
+              <div className="text-xs text-muted-foreground">Limited slots — secure your spot early</div>
             </div>
           </div>
           <a href="#register" className="shrink-0 inline-flex items-center gap-2 rounded-full btn-glow btn-glow-hover px-6 py-2.5 text-sm font-semibold text-white">
@@ -2245,14 +2260,14 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="SRM InoVateX logo" className="h-10 w-10 rounded-xl object-contain bg-white/90 p-0.5" />
+              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Build The Unbuilt logo" className="h-10 w-10 rounded-xl object-contain bg-white/90 p-0.5" />
               <div>
-                <div className="font-display font-bold text-base">SRM InoVateX 2026</div>
-                <div className="text-xs text-muted-foreground tracking-wide">Ideate · Innovate · Impact</div>
+                <div className="font-display font-bold text-base">Build The Unbuilt 2026</div>
+                <div className="text-xs text-muted-foreground tracking-wide">by Paryan Technologies Pvt. Ltd.</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              India's most ambitious student hackathon — 24 hours of relentless building, ideating, and disrupting at SRM University, Ramapuram.
+              24-hour online hackathon open to all students and developers across India. Don't just have an idea — build it.
             </p>
             <div className="flex gap-2">
               {socials.map(({ Icon, label, href, hoverBg }) => (
@@ -2289,28 +2304,28 @@ function Footer() {
               <li className="flex items-start gap-2.5">
                 <Calendar className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-medium">October 9–10, 2026</div>
-                  <div className="text-xs text-muted-foreground">24-hour hackathon</div>
+                  <div className="font-medium">Date TBA · 2026</div>
+                  <div className="text-xs text-muted-foreground">24-hour online hackathon</div>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Clock className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-medium">Starts 9:00 AM IST</div>
-                  <div className="text-xs text-muted-foreground">Check-in from 8:00 AM</div>
+                  <div className="font-medium">24 Hours Non-Stop</div>
+                  <div className="text-xs text-muted-foreground">100% online · no travel</div>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 shrink-0 mt-0.5" style={{ color:"#38BDF8" }} />
+                <Wifi className="h-4 w-4 shrink-0 mt-0.5" style={{ color:"#38BDF8" }} />
                 <div>
-                  <div className="font-medium">SRM University</div>
-                  <div className="text-xs text-muted-foreground">Ramapuram, Chennai</div>
+                  <div className="font-medium">100% Online</div>
+                  <div className="text-xs text-muted-foreground">Participate from anywhere</div>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="h-4 w-4 shrink-0 mt-0.5" style={{ color:"#a78bfa" }} />
                 <div>
-                  <div className="font-medium">innovatex@srm.edu.in</div>
+                  <div className="font-medium">contact@paryantech.com</div>
                   <div className="text-xs text-muted-foreground">Queries &amp; sponsorships</div>
                 </div>
               </li>
@@ -2335,9 +2350,9 @@ function Footer() {
         {/* Bottom bar */}
         <div className="mx-auto max-w-screen-xl px-6 lg:px-12 mt-12 pt-5 flex flex-wrap items-center justify-between gap-3"
           style={{ borderTop:"1px solid rgba(255,255,255,0.05)" }}>
-          <div className="text-xs text-muted-foreground">© 2026 SRM InoVateX. All rights reserved.</div>
+          <div className="text-xs text-muted-foreground">© 2026 Paryan Technologies Pvt. Ltd. All rights reserved.</div>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span>Crafted with ❤️ by the InoVateX team</span>
+            <span>Build The Unbuilt — by Paryan Technologies</span>
             <button onClick={scrollTop} aria-label="Back to top"
               className="grid h-8 w-8 place-items-center rounded-full transition-all"
               style={{ background:"rgba(43,126,245,0.12)", border:"1px solid rgba(43,126,245,0.2)" }}
@@ -2353,7 +2368,7 @@ function Footer() {
 }
 
 // ─── ROOT ────────────────────────────────────────────────────────────────────
-function InoVateXLanding() {
+function BuildTheUnbuiltLanding() {
   return (
     <div className="relative min-h-screen bg-background text-foreground" style={{ cursor:"none" }}>
       <DataRain />
