@@ -1078,7 +1078,7 @@ function Hero() {
     { v:"₹50K+", l:"Prize Pool" },
     { v:"6", l:"Tracks" },
     { v:"24", l:"Hours" },
-    { v:"1–5", l:"Team Size" },
+    { v:"3–5", l:"Team Size" },
   ];
 
   return (
@@ -1212,7 +1212,7 @@ function About() {
     { icon: Calendar, label:"Event Date", value:"TBA · 2026", accent:"#2B7EF5" },
     { icon: Clock, label:"Duration", value:"24 Hours", accent:"#38BDF8" },
     { icon: Users, label:"Format", value:"100% Online", accent:"#818CF8" },
-    { icon: Code2, label:"Team Size", value:"1–5 Members", accent:"#2B7EF5" },
+    { icon: Code2, label:"Team Size", value:"3–5 Members", accent:"#2B7EF5" },
     { icon: MapPin, label:"Platform", value:"Google Meet", accent:"#F5A623" },
     { icon: Trophy, label:"Prize Pool", value:"₹50,000+", accent:"#F5A623" },
   ];
@@ -1418,9 +1418,9 @@ function Prizes() {
   const podiumRef = useRef<HTMLDivElement>(null);
   const amountRef = useRef<HTMLDivElement>(null);
   const prizes = [
-    { icon:Trophy, place:"1st Prize", amount:"₹25,000", color:"from-yellow-400 to-orange-500", ringColor:"ring-yellow-400/30", desc:"Winner of the hackathon", tilt:"-2deg" },
+    { icon:Trophy, place:"1st Prize", amount:"₹30,000", color:"from-yellow-400 to-orange-500", ringColor:"ring-yellow-400/30", desc:"Winner of the hackathon", tilt:"-2deg" },
     { icon:Award, place:"2nd Prize", amount:"₹15,000", color:"from-slate-300 to-slate-500", ringColor:"ring-slate-300/30", desc:"Runner-up team", tilt:"1.5deg" },
-    { icon:Medal, place:"3rd Prize", amount:"₹10,000", color:"from-orange-400 to-amber-700", ringColor:"ring-orange-400/30", desc:"Second runner-up", tilt:"-1deg" },
+    { icon:Medal, place:"3rd Prize", amount:"₹5,000", color:"from-orange-400 to-amber-700", ringColor:"ring-orange-400/30", desc:"Second runner-up", tilt:"-1deg" },
   ];
   const extraPerks = [
     { icon:Shield, label:"Trophies & Shields" },{ icon:FileBadge, label:"Certificates" },
@@ -1531,7 +1531,7 @@ function Prizes() {
                         <p.icon className="h-8 w-8 text-white" />
                       </div>
                       <div className="text-[10px] uppercase tracking-widest font-bold mb-1" style={{ color:"#F5A623" }}>1st Place</div>
-                      <div className="font-display text-3xl font-bold" style={{ color:"#F5A623" }}>₹25,000</div>
+                      <div className="font-display text-3xl font-bold" style={{ color:"#F5A623" }}>₹30,000</div>
                       <div className="text-[9px] text-muted-foreground mt-0.5">cash + credits</div>
                       <div className="mt-3 pt-3 border-t border-white/5 text-[10px] text-muted-foreground">Winner of the hackathon</div>
                       <div className="mt-3 flex items-center justify-center gap-1.5 text-[9px]" style={{ color:"rgba(245,166,35,0.6)" }}>
@@ -1559,7 +1559,7 @@ function Prizes() {
                         <p.icon className="h-7 w-7 text-white" />
                       </div>
                       <div className="text-[10px] uppercase tracking-widest font-bold mb-1" style={{ color:"#ea580c" }}>3rd Place</div>
-                      <div className="font-display text-2xl font-bold" style={{ color:"#ea580c" }}>₹10,000</div>
+                      <div className="font-display text-2xl font-bold" style={{ color:"#ea580c" }}>₹5,000</div>
                       <div className="text-[9px] text-muted-foreground mt-0.5">cash + credits</div>
                       <div className="mt-3 pt-3 border-t border-white/5 text-[10px] text-muted-foreground">{p.desc}</div>
                     </div>
@@ -1726,7 +1726,7 @@ function TimelineRow({ s, i, right }: { s:{ date:string; time:string; title:stri
 function Timeline() {
   const lineRef = useRef<HTMLDivElement>(null);
   const steps = [
-    { date:"Step 1", time:"Registration", title:"Register on Unstop", desc:"Register your team/individual participation through the Unstop platform.", icon:Sparkles },
+    { date:"Step 1", time:"Registration", title:"Register on Unstop", desc:"Register your team (3–5 members) on Unstop to begin the process.", icon:Sparkles },
     { date:"Step 2", time:"Form & Payment", title:"Fill Form + Pay ₹100/person", desc:"Complete the registration form and pay ₹100 per participant. Submit payment proof.", icon:FileBadge },
     { date:"Step 3", time:"Confirmation", title:"Receive Confirmation Email", desc:"After payment verification, you'll receive a confirmation email with all details.", icon:CheckCircle2 },
     { date:"Step 4", time:"Community", title:"Join WhatsApp Community", desc:"WhatsApp group link shared post-confirmation. All updates via official channels.", icon:Users },
@@ -1885,7 +1885,7 @@ function FAQVisual() {
   const [visibleCount, setVisibleCount] = useState(1);
   const chat = [
     { who:"q", text:"Who can participate?", delay:0 },
-    { who:"a", text:"Any student or developer in India. Teams of 1–5 members.", delay:800 },
+    { who:"a", text:"Any student or developer in India. Teams of 3–5 members.", delay:800 },
     { who:"q", text:"What is the registration fee?", delay:1800 },
     { who:"a", text:"₹100 per person. Pay via Unstop after filling the registration form.", delay:2600 },
     { who:"q", text:"Is it online or offline?", delay:3600 },
@@ -1969,8 +1969,8 @@ function FAQVisual() {
 function FAQ() {
   const listRef = useRef<HTMLDivElement>(null);
   const faqs = [
-    { q:"Who can participate?", a:"Any student, developer, or innovator from anywhere in India. Individual or teams of up to 5. No college affiliation required." },
-    { q:"What is the team size?", a:"1 to 5 members per team. You can also participate solo." },
+    { q:"Who can participate?", a:"Any student, developer, or innovator from anywhere in India. Teams of 3–5 members. No college affiliation required." },
+    { q:"What is the team size?", a:"3 to 5 members per team. Solo participation is not allowed." },
     { q:"What is the registration fee?", a:"₹100 per person. Register on Unstop, fill the form, pay ₹100/person, and submit your payment proof for verification." },
     { q:"How does registration work?", a:"Register on Unstop → Fill the registration form → Pay ₹100/person → Submit payment proof → Receive confirmation email → Get WhatsApp group link." },
     { q:"Can beginners participate?", a:"Absolutely. You don't need to be an expert — what matters is your idea, effort, and ability to build in 24 hours." },
