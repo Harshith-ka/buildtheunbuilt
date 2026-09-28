@@ -12,6 +12,7 @@ import {
   MapPin, Mail, Phone, Instagram, Linkedin, Calendar, Clock, ArrowRight,
   Menu, X, Github, Twitter, Wheat, Building2, Laptop, Gift,
   Shield, Star, Zap, CheckCircle2, TrendingUp, Cpu, Wifi, Activity,
+  Globe, Terminal, Bot, Workflow, ExternalLink, Layers,
 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -2023,50 +2024,323 @@ function FAQ() {
 
 // ─── SPONSORS ────────────────────────────────────────────────────────────────
 function Sponsors() {
-  const INSTAGRAM_URL = "https://instagram.com/paryan.technologies";
-  const cards = [1,2,3,4,5,6];
+  const sponsorsRef = useRef<HTMLDivElement>(null);
+
+  const sponsorsList = [
+    {
+      name: ".xyz",
+      role: "Official Domain Partner",
+      category: "Domains & Web3",
+      tagline: "The leading domain registry powering the next generation of internet builders and innovators.",
+      perk: "Free .xyz domain vouchers & DNS registration tooling for all hackathon teams.",
+      accent: "#38BDF8",
+      accentBg: "rgba(56, 189, 248, 0.12)",
+      borderColor: "rgba(56, 189, 248, 0.3)",
+      glowColor: "rgba(56, 189, 248, 0.25)",
+      tags: ["Domain Names", "DNS Management", "Web3 Identity"],
+      url: "https://gen.xyz",
+      badgeIcon: Globe,
+      mark: ".xyz",
+    },
+    {
+      name: "n8n",
+      role: "Workflow & AI Automation Partner",
+      category: "AI Agents & Automation",
+      tagline: "Fair-code workflow automation platform and multi-agent AI system orchestration for developers.",
+      perk: "Pre-built AI agent templates, automation pipelines & cloud execution credits.",
+      accent: "#FF6D5A",
+      accentBg: "rgba(255, 109, 90, 0.12)",
+      borderColor: "rgba(255, 109, 90, 0.3)",
+      glowColor: "rgba(255, 109, 90, 0.25)",
+      tags: ["AI Orchestration", "500+ Integrations", "Fair-Code Engine"],
+      url: "https://n8n.io",
+      badgeIcon: Workflow,
+      mark: "n8n",
+    },
+    {
+      name: "CodeCrafters",
+      role: "Dev Mastery Partner",
+      category: "Advanced Developer Practice",
+      tagline: "Master deep systems engineering by recreating Git, Redis, Docker, and SQLite from scratch.",
+      perk: "Exclusive CodeCrafters practice access, system-building tracks & dev perks.",
+      accent: "#F59E0B",
+      accentBg: "rgba(245, 158, 11, 0.12)",
+      borderColor: "rgba(245, 158, 11, 0.3)",
+      glowColor: "rgba(245, 158, 11, 0.25)",
+      tags: ["Build Your Own Redis", "Polyglot Tracks", "Systems Engineering"],
+      url: "https://codecrafters.io",
+      badgeIcon: Terminal,
+      mark: "CodeCrafters",
+    },
+    {
+      name: "Prompt Techies",
+      role: "AI & Prompt Engineering Partner",
+      category: "Generative AI Community",
+      tagline: "Frontier community driving prompt optimization frameworks, LLM solutions, and AI education.",
+      perk: "Prompt engineering toolkits, GenAI mentorship & hands-on prompt workshops.",
+      accent: "#A855F7",
+      accentBg: "rgba(168, 85, 247, 0.12)",
+      borderColor: "rgba(168, 85, 247, 0.3)",
+      glowColor: "rgba(168, 85, 247, 0.25)",
+      tags: ["Prompt Engineering", "LLM Tuning", "GenAI Mentorship"],
+      url: "https://prompttechies.com",
+      badgeIcon: Sparkles,
+      mark: "Prompt Techies",
+    },
+    {
+      name: "Big Bucks",
+      role: "Ecosystem & Venture Partner",
+      category: "Ecosystem & Startup Growth",
+      tagline: "Empowering student entrepreneurs and high-impact fintech innovators with growth pathways.",
+      perk: "Prize pool boost, venture ecosystem access & incubation mentorship for top teams.",
+      accent: "#10B981",
+      accentBg: "rgba(16, 185, 129, 0.12)",
+      borderColor: "rgba(16, 185, 129, 0.3)",
+      glowColor: "rgba(16, 185, 129, 0.25)",
+      tags: ["Prize Backing", "Seed Opportunities", "Venture Network"],
+      url: "#contact",
+      badgeIcon: Coins,
+      mark: "Big Bucks",
+    },
+  ];
+
+  const sponsorPerks = [
+    { title: "Free .xyz Domains", desc: "Custom domain voucher for every team", icon: Globe, color: "#38BDF8" },
+    { title: "n8n AI Workflows", desc: "Automate backend tasks & multi-agent flows", icon: Workflow, color: "#FF6D5A" },
+    { title: "CodeCrafters Access", desc: "Practice systems-level coding challenges", icon: Terminal, color: "#F59E0B" },
+    { title: "Prompt Techies Mentoring", desc: "Direct guidance on LLMs & prompt stacks", icon: Sparkles, color: "#A855F7" },
+    { title: "Big Bucks Prize Support", desc: "Ecosystem backing & seed incubation", icon: Coins, color: "#10B981" },
+  ];
+
+  useEffect(() => {
+    if (!sponsorsRef.current) return;
+    gsap.fromTo(
+      Array.from(sponsorsRef.current.children),
+      { y: 35, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: sponsorsRef.current, start: "top 85%" },
+      }
+    );
+  }, []);
+
   return (
-    <Section id="sponsors" eyebrow="Sponsors & partners" title="Our sponsors are coming.">
-      <p className="text-muted-foreground mb-10 -mt-6">We're finalizing our sponsor lineup. Tap to get a sneak peek — the full reveal drops on our Instagram.</p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
-        {cards.map((_, i) => (
-          <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noreferrer"
-            className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1"
-            style={{ minHeight:110, background:"rgba(8,18,40,0.8)", border:"1px solid rgba(43,126,245,0.15)" }}>
-            {/* Top accent stripe */}
-            <div style={{ height:3, background:`linear-gradient(90deg,rgba(43,126,245,0.6),rgba(245,166,35,0.6),rgba(43,126,245,0.6))` }} />
-            <div className="flex flex-col items-center justify-center h-full py-5 gap-2">
-              {/* Blur/mystery layer */}
-              <div className="relative">
-                <div style={{ width:44, height:44, borderRadius:10, background:"linear-gradient(135deg,rgba(43,126,245,0.2),rgba(129,140,248,0.2))", filter:"blur(2px)", display:"flex", alignItems:"center", justifyContent:"center" }}>
-                  <Building2 className="h-5 w-5 text-primary/40" />
+    <Section
+      id="sponsors"
+      eyebrow="Sponsors & Partners"
+      title="Backed by visionary tech partners."
+      subtitle="Industry leaders empowering Build the Unbuilt with domains, automation pipelines, dev practice tracks, AI mentorship, and prize support."
+    >
+      {/* 5 Sponsor Cards Grid */}
+      <div ref={sponsorsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {sponsorsList.map((sponsor, idx) => {
+          const Icon = sponsor.badgeIcon;
+          return (
+            <div
+              key={idx}
+              className={`group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between ${
+                idx >= 3 ? "md:col-span-1 lg:col-span-1.5" : ""
+              }`}
+              style={{
+                background: "rgba(8,18,40,0.75)",
+                border: `1px solid ${sponsor.borderColor}`,
+                backdropFilter: "blur(20px)",
+                boxShadow: `0 8px 32px -8px rgba(0,0,0,0.5)`,
+              }}
+            >
+              {/* Gradient Accent Bar */}
+              <div
+                style={{
+                  height: 4,
+                  background: `linear-gradient(90deg, ${sponsor.accent}20, ${sponsor.accent}, ${sponsor.accent}40)`,
+                }}
+              />
+
+              {/* Ambient Glow */}
+              <div
+                className="absolute -top-24 -right-24 w-48 h-48 rounded-full pointer-events-none transition-opacity duration-500 opacity-20 group-hover:opacity-40"
+                style={{
+                  background: `radial-gradient(circle, ${sponsor.accent} 0%, transparent 70%)`,
+                  filter: "blur(40px)",
+                }}
+              />
+
+              <div className="p-7 relative flex-1 flex flex-col justify-between">
+                <div>
+                  {/* Header: Badge & External Link */}
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <span
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider"
+                      style={{
+                        background: sponsor.accentBg,
+                        border: `1px solid ${sponsor.borderColor}`,
+                        color: sponsor.accent,
+                      }}
+                    >
+                      <Icon className="h-3 w-3" />
+                      {sponsor.role}
+                    </span>
+
+                    {sponsor.url && sponsor.url !== "#contact" ? (
+                      <a
+                        href={sponsor.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-1.5 rounded-xl transition hover:bg-white/10 text-muted-foreground hover:text-white"
+                        title={`Visit ${sponsor.name}`}
+                      >
+                        <ExternalLink className="h-4 w-4" style={{ color: sponsor.accent }} />
+                      </a>
+                    ) : null}
+                  </div>
+
+                  {/* Brand Title & Logo Representation */}
+                  <div className="flex items-center gap-3.5 mb-3">
+                    <div
+                      className="h-12 w-12 rounded-2xl flex items-center justify-center font-mono font-bold text-base shrink-0 shadow-inner"
+                      style={{
+                        background: sponsor.accentBg,
+                        border: `1px solid ${sponsor.borderColor}`,
+                        color: sponsor.accent,
+                      }}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold tracking-tight text-white group-hover:text-cyan transition-colors">
+                        {sponsor.name}
+                      </h3>
+                      <div className="text-xs text-muted-foreground font-mono">{sponsor.category}</div>
+                    </div>
+                  </div>
+
+                  {/* Tagline */}
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-4">{sponsor.tagline}</p>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span style={{ fontSize:20 }}>?</span>
+
+                {/* Perk Box */}
+                <div className="mt-4">
+                  <div
+                    className="rounded-2xl p-3.5 mb-4 text-xs leading-relaxed"
+                    style={{
+                      background: "rgba(255,255,255,0.03)",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    <div className="flex items-center gap-1.5 font-semibold mb-1" style={{ color: sponsor.accent }}>
+                      <Gift className="h-3.5 w-3.5" />
+                      <span>Hacker Perk</span>
+                    </div>
+                    <span className="text-muted-foreground">{sponsor.perk}</span>
+                  </div>
+
+                  {/* Feature Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {sponsor.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded-md text-foreground/70"
+                        style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div style={{ fontSize:9, color:"rgba(120,150,200,0.5)", letterSpacing:"0.15em", textTransform:"uppercase", textAlign:"center" }}>Coming Soon</div>
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1"
-                style={{ fontSize:9, color:"rgba(56,189,248,0.8)" }}>
-                <Instagram className="h-3 w-3" /> Reveal
-              </div>
+
+              {/* Bottom Interactive Link */}
+              {sponsor.url && sponsor.url !== "#contact" ? (
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-7 py-3 border-t text-xs font-medium flex items-center justify-between transition group/link"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.06)",
+                    background: "rgba(255,255,255,0.02)",
+                    color: sponsor.accent,
+                  }}
+                >
+                  <span>Explore {sponsor.name}</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
+                </a>
+              ) : (
+                <div
+                  className="px-7 py-3 border-t text-xs font-medium flex items-center justify-between"
+                  style={{
+                    borderColor: "rgba(255,255,255,0.06)",
+                    background: "rgba(255,255,255,0.02)",
+                    color: sponsor.accent,
+                  }}
+                >
+                  <span>Ecosystem Growth Partner</span>
+                  <Sparkles className="h-3.5 w-3.5 opacity-60" />
+                </div>
+              )}
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
-      {/* Big reveal CTA */}
-      <div className="glass-strong rounded-3xl p-8 flex flex-col sm:flex-row items-center gap-6 justify-between">
+
+      {/* Perks summary strip */}
+      <div className="glass-strong rounded-3xl p-6 sm:p-8 mb-8 border border-primary/20">
+        <div className="flex items-center gap-2 mb-6">
+          <Zap className="h-5 w-5 text-yellow-400" />
+          <h4 className="font-display text-lg font-bold">What Hackers Receive from Our Sponsors</h4>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {sponsorPerks.map((p, pIdx) => {
+            const PIcon = p.icon;
+            return (
+              <div
+                key={pIdx}
+                className="rounded-2xl p-4 transition-all hover:bg-white/5"
+                style={{
+                  background: "rgba(4,9,26,0.5)",
+                  border: "1px solid rgba(43,126,245,0.15)",
+                }}
+              >
+                <div
+                  className="h-9 w-9 rounded-xl flex items-center justify-center mb-3"
+                  style={{ background: `${p.color}18`, color: p.color }}
+                >
+                  <PIcon className="h-4 w-4" />
+                </div>
+                <div className="font-semibold text-sm mb-1 text-white">{p.title}</div>
+                <div className="text-xs text-muted-foreground leading-relaxed">{p.desc}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Sponsor CTA */}
+      <div className="glass-strong rounded-3xl p-8 flex flex-col sm:flex-row items-center gap-6 justify-between border border-white/10">
         <div>
-          <div className="font-display text-xl font-bold mb-1">Sponsor announcements dropping soon</div>
-          <div className="text-sm text-muted-foreground">Follow us on Instagram for the official sponsor reveal and event updates.</div>
+          <div className="font-display text-xl font-bold mb-1">Partner with Build the Unbuilt</div>
+          <div className="text-sm text-muted-foreground">
+            Connect with 350+ skilled student engineers, developers, and designers. Explore sponsorship packages.
+          </div>
         </div>
         <div className="flex flex-wrap gap-3 shrink-0">
-          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" data-magnetic
-            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition"
-            style={{ background:"linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)" }}>
-            <Instagram className="h-4 w-4" /> Follow for Reveal
+          <a
+            href="https://instagram.com/paryan.technologies"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 shadow-lg"
+            style={{ background: "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)" }}
+          >
+            <Instagram className="h-4 w-4" /> Follow on Instagram
           </a>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:bg-white/10 transition">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:bg-white/10 transition border border-cyan/30 text-cyan"
+          >
             Become a Sponsor <ArrowRight className="h-4 w-4" />
           </a>
         </div>
